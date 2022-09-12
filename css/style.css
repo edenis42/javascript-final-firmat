@@ -1,0 +1,158 @@
+body {
+    background-color: #c5c4c4;
+}
+
+button {
+    padding: 3px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
+button:nth-child(1) {
+    background-color: rgb(200, 81, 81);
+}
+
+button:nth-child(2) {
+    background-color: rgb(229, 229, 84);
+}
+
+button:nth-child(3) {
+    background-color: rgb(65, 189, 65);
+}
+
+button:nth-child(4) {
+    background-color: rgb(149, 149, 208);
+}
+
+.actions {
+    margin-top: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.actions button {
+    margin-right: 10px;
+}
+
+#card-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.card img {
+    display: block;
+    min-width: 100%;
+    max-height: 200px;
+    background-color: white;
+}
+
+.card-actions {
+    height: 1em;
+    border-top: 1px solid black;
+    padding: 0.5em;
+}
+
+.modal-body img {
+    display: block;
+    width: 100%;
+}
+
+i:hover, .card img {
+    cursor: pointer;
+}
+
+/* Like Animacion */
+@keyframes like {
+    from {
+        margin-top: -0.25em;
+        font-size: 1.5em;
+        color: black;
+    }
+
+    to {
+        font-size: 1em;
+        color: red;
+    }
+  }
+  
+.like {
+    animation: like 600ms linear 0s 1 normal forwards;
+}
+
+
+/* Modal (Fondo) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Contenido */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    max-width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Animacion */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* Cerrar el boton */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 16px;
+    background-color: #74c5ff;
+    color: white;
+    height: 2em;
+}
+
+.modal-body {padding: 16px;}

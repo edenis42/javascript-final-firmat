@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <script src="https://kit.fontawesome.com/c7384fcffa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1> Galeria de Gatitos </h1>
+
+    <div class="actions">
+        <button onclick="agregarCard()"> Nueva Tarjeta </button>
+        <button onclick="verFavoritos()"> Ver Favoritos </button>
+        <button onclick="verTodos()"> Ver Todos </button>
+        <button onclick="agregarCardDesdeAPI()"> Nueva Tarjeta (API) </button>
+    </div>
+
+    <div id="card-container">
+
+        <!-- CARD -->
+        <div class="card">
+            <img class="card-img" src="./img/cat.png" alt="palceholder">
+            <div class="card-actions">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">x</span>
+                <a id="modal-link" href="#" target="_blank">Link!</a>
+            </div>
+            <div class="modal-body">
+                <img id="modal-img" src="./img/cat.png" alt="palceholder">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
