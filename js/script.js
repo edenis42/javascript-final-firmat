@@ -70,7 +70,7 @@ function agregarCard() {
     cardContainer.appendChild(card);
 }
 
-// Agregar favorritos
+// Agregar favoritos
 function verFavoritos() {
     console.log("verFavoritos");
 
@@ -78,5 +78,28 @@ function verFavoritos() {
     // 2. Iterar el resultado, y verificar si el icono tiene la clase 'like'
     // 3. Si no tiene la clase like, tengo que ocultar al padre del padre
 
+    var iconos = document.querySelectorAll('.fa-heart');
+    console.log("mostrar iconos: ", iconos);
+    
+    for (let index = 0; index < iconos.length; index++) {
+        var icono = iconos[index];
+        var tieneClassLike = icono.classList.contains('like');
+        
+        if (tieneClassLike == false) {
+            var card = icono.parentNode.parentNode;
+            card.style.display = 'none';
+        }
+    }
+}
+
+function verTodos() {
+
+    var iconos = document.querySelectorAll('.fa-heart');
+
+    for (let index = 0; index < iconos.length; index++) {
+        const icono = iconos[index];
+        var card = icono.parentNode.parentNode;
+        card.style.display = 'block';
+    }
 
 }

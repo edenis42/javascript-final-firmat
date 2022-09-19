@@ -156,3 +156,7 @@ i:hover, .card img {
 }
 
 .modal-body {padding: 16px;}
+
+.fa-heart {
+    color: green;
+}
