@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <h1>Titulo</h1>
+
+    <div id="formulario"></div>
+
+    <script>
+        console.log("Inicio");
+
+        var peticion = new XMLHttpRequest();
+        peticion.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // console.log("Estado de la peticion: ", this.readyState);
+                var formulario = document.querySelector('#formulario');
+                formulario.innerHTML = this.response;
+            }
+        }
+        
+        peticion.open("GET", "contacto.html", true);
+        peticion.setRequestHeader("Content-type", "html");
+
+        
+        peticion.send();
+        // peticion.abort();
+
+        console.log("Fin");
+    </script>
+</body>
+</html>
