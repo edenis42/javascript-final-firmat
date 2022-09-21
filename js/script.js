@@ -42,7 +42,8 @@ icono.addEventListener("click", like);
 
 
 // Agregar Targeta
-function agregarCard() {
+function agregarCard(urlFoto) {
+
     // cotenedor de cards
     var cardContainer = document.getElementById('card-container');
     
@@ -51,7 +52,14 @@ function agregarCard() {
 
     var imagen = document.createElement('img');
     imagen.classList.add('card-img');
-    imagen.setAttribute('src', './img/cat.png');
+    
+
+    if (urlFoto) {
+        imagen.setAttribute('src', urlFoto);
+    } else {
+        imagen.setAttribute('src', './img/cat.png');
+    }
+
     imagen.setAttribute('alt', 'palceholder');
     imagen.addEventListener("click", showModal);
     card.appendChild(imagen);
@@ -101,5 +109,30 @@ function verTodos() {
         var card = icono.parentNode.parentNode;
         card.style.display = 'block';
     }
+
+}
+
+
+// Agregar Gatito desde la API
+
+function agregarCardDesdeAPI() {
+    // 1.- Comunicarme con el servidor y pedirle la foto del gatito
+    // 2.- Usar la funcion de crear la tarjeta y pasarle la foto del gatito
+
+    var peticion = new XMLHttpRequest();
+
+    peticion.onreadystatechange = function () {
+        // console.log("estado de la peticion: ", this.readyState);
+        // console.log("codigo de error: ", this.status);
+
+        if (this.readyState == 4 && this.status == 200) {
+            var urlGatito = JSON.parse(this.responseText)[0].url;
+            console.log(urlGatito);
+            agregarCard(urlGatito);
+        }
+    }
+
+    peticion.open("GET", "https://api.thecatapi.com/v1/images/search?size=full", true);
+    peticion.send();
 
 }
